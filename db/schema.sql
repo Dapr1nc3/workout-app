@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 CREATE TABLE user (
   id INTEGER AUTO_INCREMENT PRIMARY KEY,
   username VARCHAR(50) NOT NULL,
@@ -16,3 +17,8 @@ CREATE TABLE measurements (
     calfs VARCHAR(50),
     thighs VARCHAR(50)
 );
+=======
+DROP DATABASE IF EXISTS git_fit_db;
+
+CREATE DATABASE git_fit_db;
+>>>>>>> 9f7a73cf3d8e318e9d3a720efb27fd79d545ee60

@@ -11,6 +11,10 @@
     "type": "git",
     "url": "git+https://github.com/Dapr1nc3/workout-app.git"
   },
+<<<<<<< HEAD
+=======
+  "keywords": [],
+>>>>>>> 9f7a73cf3d8e318e9d3a720efb27fd79d545ee60
   "author": "",
   "license": "ISC",
   "bugs": {
