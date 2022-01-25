@@ -21,9 +21,4 @@ router.get('/page4', (req, res) => {
     res.sendFile(path.join(__dirname, '../.././public/page4.html'));
 });
 
-<<<<<<< HEAD
 module.exports = router
-=======
-module.exports = router
- 
->>>>>>> 9f7a73cf3d8e318e9d3a720efb27fd79d545ee60
