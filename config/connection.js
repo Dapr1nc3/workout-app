@@ -8,7 +8,7 @@ const sequelize = new Sequelize(
   process.env.DB_PW,
   {
     // original: host: 'localhost. if you have any issues with localhost, use "127.0.0.1'
-    host: "",
+    host: "127.0.0.1",
     dialect: "mysql",
     port: 3306,
   }
