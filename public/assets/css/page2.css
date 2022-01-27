@@ -1,0 +1,18 @@
+:root {
+    --white: #FCF7F8;
+    --dark-blue: #21295C;
+    --mint: #74D3AE;
+  }
+
+body {
+    background-color: var(--white);
+    color: var(--dark-blue);
+    text-align: justify;
+    font-family: 'Exo', sans-serif;
+}
+
+
+nav {
+    background-color: var(--dark-blue);
+    color:var(--white)
+}
