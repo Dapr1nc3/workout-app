@@ -14,16 +14,19 @@ body {
 
 nav {
     background-color: var(--dark-blue);
-    color:var(--white)
+    color:var(--white);
+    border-bottom: 1px solid #FCF7F8;
 }
 
 nav h1 {
     font-size:50px;
+    padding: 2vw;
 }
 
 footer {
     background-color: var(--dark-blue);
-    color:var(--white)
+    color:var(--white);
+    border-top: 1px solid #FCF7F8;
 }
 
 footer h1 {

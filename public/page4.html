@@ -18,7 +18,7 @@
     <nav class="navbar navbar-expand-lg sticky-top">
         <h1 class="p-3">NGF</h1>
         <h3 class="nav-item navbar-brand ">NO GEAR FITNESS</h3>
-        <a href="./page1.html" class="nav-link ms-auto justify-content-end text-light p-3" style="font-size:20px; ">HOME</a>
+        <a href="./page1.html" class="nav-link ms-auto justify-content-end text-light p-3" style="font-size:20px; text-decoration:underline; ">HOME</a>
     </nav>
 
 
@@ -26,36 +26,34 @@
     <main>
         <!-- title -->
         <section>
-            <h1 class="text-center">Current Workout Routine</h1>
+            <h1 class="text-center p-3" style="background-color:#74D3AE; color:#21295C;">Current Workout Routine</h1>
         </section>
 
             <!-- demonstration area with description -->
-        <section>
-            <div id="myCarousel" class="carousel slide" data-ride="carousel">
-                <ol class="carousel-indicators">
-                    <li data-target="#myCarousel" data-bs-slide-to="0" class="active"></li> 
-                    <li data-target="#myCarousel" data-bs-slide-to="1"></li> 
-                    <li data-target="#myCarousel" data-bs-slide-to="2"></li>
-                </ol>
-                <!-- active slide -->
+        <section class="position-absolute top-50 start-50 translate-middle">
+            <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel" data-bs-interval="false">           
                 <div class="carouself-inner">
-                    <div class="carousel-item active">
-                        <div class="container">
-                            <img src="http://d205bpvrqc9yn1.cloudfront.net/0001.gif" class="d-block w-100">
+                    <div class="carousel-item active ">
+                        <div class="container ">
+                            <img src="http://d205bpvrqc9yn1.cloudfront.net/0001.gif" class="rounded mx-auto d-block p-5">
+                            <div class="text-center">
                             <h1>Abs Crunch</h1>
                             <p>Lie down on your back. Plant your feet on the floor, hip-width apart. Bend your knees and place your arms across your chest. Contract your abs and inhale.
                                 Exhale and lift your upper body, keeping your head and neck relaxed.
                                 Inhale and return to the starting position.</p>
+                            </div>
                         </div>
                     </div>
                      <!-- active slide end -->
 
                      <!-- slide 2 -->
-                    <div class="carousel-item" data-interval="false">
+                    <div class="carousel-item">
                         <div class="container">
-                            <img src="http://d205bpvrqc9yn1.cloudfront.net/0002.gif" class="d-block w-100">
+                            <div class="text-center">
+                            <img src="http://d205bpvrqc9yn1.cloudfront.net/0002.gif" class="rounded mx-auto d-block">
                             <h1>Workout Name 2</h1>
                             <p>description workout 2</p>
+                        </div>
                         </div>
                     </div>
                      <!-- slide 2 end-->
@@ -63,24 +61,24 @@
                      <!-- slide 3  -->
                     <div class="carousel-item">
                         <div class="container">
-                            <img src="http://d205bpvrqc9yn1.cloudfront.net/0003.gif" class="d-block w-100">
+                            <img src="http://d205bpvrqc9yn1.cloudfront.net/0003.gif" class="rounded mx-auto d-block">
+                            <div class="text-center">
                             <h1>Workout Name 3</h1>
                             <p>description workout 3</p>
+                        </div>
                         </div>
                     </div>
                      <!-- slide 3 end  -->
                 </div> 
-            </div>
-         
-
-            <a href="#myCarousel" class="carousel-control-prev" role="button" data-slide="prev">
-                <span class="sr-only">Previous</span>
-                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-            </a>
-            <a href="#myCarousel" class="carousel-control-next" role="button" data-slide="next">
-                <span class="sr-only">Next</span>
-                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-            </a>
+                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Previous</span>
+                  </button>
+                  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Next</span>
+                  </button>
+                </div>
         </section>          
         <!-- demonstration section ends -->
     </main>
@@ -90,7 +88,6 @@
         <h1 class="p-3 text-center"> © 2022, const group9 = "M.A.C'D"</h1>
         <a href="./page1.html" class="nav-link p-3" style="font-size:15px;color:#FCF7F8; text-decoration: underline ">CONTACT US</a>
     </footer>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
 </body>
 </html>
