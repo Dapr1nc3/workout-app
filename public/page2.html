@@ -1,12 +1,119 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>GitFit</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+        integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous" />
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="./assets/css/page2.css"/>
+    <title>NGF.com</title>
 </head>
+
 <body>
-    <h1>Page 2 TEST</h1>
+    <!-- title of page -->
+    <header class="jumbotron text-center">
+        <h1 class="display-3">Workout Schedule</h1>
+        <p class="lead">A simple way to keep you workout Schedule organized</p>
+        <p id="currentDay" class="lead"></p>
+    </header>
+    <!-- title of page end -->
+
+    <!-- days of week planner -->
+
+        <div class="container-fluid">
+            <h1 class="text-center workWeek">Workout for the Week</h1>
+            <div id="9am" class="row time-block p-3">
+                <div class="hour col-md-1">Monday</div>
+                <textarea name="text-area" id="text-area" class="col-md-10 description" style="color: #FCF7F8;">
+            </textarea>
+                <button class="btn saveBtn col-md-1">Save<br /><i class="fas fa-save"></i></button>
+            </div>
+            <div id="10am" class="row time-block p-3">
+                <div class="hour col-md-1">Tuesday</div>
+                <textarea name="text-area" id="text-area-2" class="col-md-10 description" style="color: #FCF7F8;">
+            </textarea>
+                <button class="btn saveBtn col-md-1">Save<br /><i class="fas fa-save"></i></button>
+            </div>
+            <div id="11am" class="row time-block p-3">
+                <div class="hour col-md-1">Wednesday</div>
+                <textarea name="text-area" id="text-area-3" class="col-md-10 description" style="color: #FCF7F8;">
+            </textarea>
+                <button class="btn saveBtn col-md-1">Save<br /><i class="fas fa-save"></i></button>
+            </div>
+            <div id="12pm" class="row time-block p-3">
+                <div class="hour col-md-1">Thursday</div>
+                <textarea name="text-area" id="text-area-4" class="col-md-10 description" style="color: #FCF7F8;">
+            </textarea>
+                <button class="btn saveBtn col-md-1">Save<br /><i class="fas fa-save"></i></button>
+            </div>
+            <div id="1pm" class="row time-block p-3">
+                <div class="hour col-md-1">Friday</div>
+                <textarea name="text-area" id="text-area-5" class="col-md-10 description" style="color: #FCF7F8;">
+            </textarea>
+                <button class="btn saveBtn col-md-1">Save<br /><i class="fas fa-save"></i></button>
+            </div>
+            <div id="2pm" class="row time-block p-3">
+                <div class="hour col-md-1">Saturday</div>
+                <textarea name="text-area" id="text-area-6" class="col-md-10 description" style="color: #FCF7F8;">
+            </textarea>
+                <button class="btn saveBtn col-md-1">Save<br /><i class="fas fa-save"></i></button>
+            </div>
+            <div id="3pm" class="row time-block p-3">
+                <div class="hour col-md-1">Sunday</div>
+                <textarea name="text-area" id="text-area-7" class="col-md-10 description" style="color: #FCF7F8;">
+            </textarea>
+                <button class="btn saveBtn col-md-1">Save<br /><i class="fas fa-save"></i></button>
+            </div>
+        </div>
+    <!-- days of week planner end -->
+
+    <!-- Measurements section -->
+    <section class="p-5" style="background-color: #21295c;margin-top: 50px;">
+        <div class="container p-5" style="background-color: #FCF7F8; padding-top: 60px;border-top-width: 100px;margin-top: 60px;">
+            <h1 style="color: #21295c;">My Current Measurements</h1>
+            <ul>
+                <li class="measure-item">
+                    Height:
+                </li>
+                <li class="measure-item">
+                    Weight:
+                </li>
+                <li class="measure-item">
+                    Fat%:
+                </li>
+                <li class="measure-item">
+                    Body Mass:
+                </li>
+            </ul>
+              <!-- Measurements section end-->
+
+            <!-- Goals section -->
+            <h1 class= "my-goals"style="color: #21295c;">My Goals</h1>
+            <p class="p-2"><b>What is your goal for the week?</b></p>
+            <textarea name="text-area" id="text-area" class="col-md-10 description" style="color: #FCF7F8;">
+                type here...
+            </textarea>
+            <p class="p-2"><b>Did you hit your previous goal?</b></p>
+            <textarea name="text-area" id="text-area" class="col-md-10 description" style="color: #FCF7F8;">
+                type here...
+            </textarea>
+            <p class="p-2"><b>What was your biggest challenge?</b></p>
+            <textarea name="text-area" id="text-area" class="col-md-10 description" style="color: #FCF7F8;">
+                type here...
+            </textarea>
+            <!-- Goals section end -->
+        </div>
+    </section>
+    
+
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+    <script src="./assets/js/page2.js"></script>
+    
 </body>
+
 </html>
