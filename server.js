@@ -1,5 +1,7 @@
-const express = require("express");
-const sequelize = require("./config/connection");
+const express = require('express');
+const sequelize = require('./config/connection');
+// const passport = require('passport');
+
 
 const routes = require('./routes');
 
@@ -10,6 +12,17 @@ const PORT = process.env.PORT || 3001;
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(express.static('public'));
+
+// app.use(flash())
+// app.use(session({
+//   secret: process.env.SESSION_SECRET,
+//   // to not resave session variables if nothing has changed 
+//   resave: false,
+//   // to not save empty value in session
+//   saveUninitialized: false
+// }))
+// app.use(passport.init())
+// app.use(passport.session())
 
 // routes
 app.use(routes);
