@@ -11,6 +11,7 @@ var workout = function () {
 		if (response.ok) {
 			response.json().then(function (data) {
 				// console.log(data);
+                selectTargetMuscle(data);
 			});
 		} else {
 			alert("Error");
@@ -18,3 +19,20 @@ var workout = function () {
 	});
 };
 
+
+// FILTERS BODY WEIGHT EXERCISES BY TARGET MUSCLE 
+var selectTargetMuscle = function (data) {
+
+    var targetMuscle = "abs"
+
+	for (let i = 0; i < 3; i++) {
+
+		if (data[i].target === targetMuscle) {
+			console.log(data[i]);
+
+		}
+
+	}
+};
+
+// workout();
