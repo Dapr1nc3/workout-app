@@ -54,4 +54,10 @@ router.post('/', (req, res) => {
    });
 });
 
+//login a user
+router.post("/login", (req, res) => {
+   
+});
+
+
 module.exports = router;

@@ -1,13 +1,21 @@
 const router = require("express").Router();
-const { Measurements } = require("../../models");
+const { Measurements, User } = require("../../models");
 
-// GET /api/users
+// GET /api/users/measurements/
 router.get("/", (req, res) => {
   // Access our Measurement model and run .findAll() method
-  User.findAll({
+  Measurements.findAll({
     // used Attribute key and instructed the query to exclude the password column.
     // It's in an array because if we want to exclude more than one, we can just add more.
     // Ex: attributes: { exclude: ['password'] }
+   // Query configuration
+  //  attributes: ["id", "height", "weight", "body_mass", "fat_percentage"], 
+  //  include: [
+  //    {
+  //      model: User,
+  //      attributes: ["username"],
+  //    },
+  //  ],
   })
     .then((dbUserData) => res.json(dbUserData))
     .catch((err) => {
@@ -19,13 +27,21 @@ router.get("/", (req, res) => {
 // GET /api/users
 router.get("/:id", (req, res) => {
   // Access our measurement model and run .findOne) method
-  User.findOne({
+  Measurements.findOne({
     // used Attribute key and instructed the query to exclude the password column.
     // It's in an array because if we want to exclude more than one, we can just add more.
     // Ex: attributes: { exclude: ['password'] }
     where: {
       id: req.params.id,
     },
+    // Query configuration
+   attributes: ["id", "height", "weight", "body_mass", "fat_percentage"], 
+   include: [
+     {
+       model: User,
+       attributes: ["username"],
+     },
+   ],
   })
     .then((dbUserData) => {
       if (!dbUserData) {
@@ -40,12 +56,14 @@ router.get("/:id", (req, res) => {
     });
 });
 
-// POST /api/users - Create a new user
+// POST /api/users/measurements - Create measurements for user
 router.post('/', (req, res) => {
- User.create({
-   username: req.body.username,
-   email: req.body.email,
-   password: req.body.password
+ Measurements.create({
+   height: req.body.height,
+   weight: req.body.weight,
+   fat_percentage: req.body.fat_percentage,
+   body_mass: req.body.body_mass,
+   user_id: req.body.user_id 
  })
    .then(dbUserData => res.json(dbUserData))
    .catch(err => {
