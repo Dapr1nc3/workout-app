@@ -70,20 +70,14 @@ router.post('/login', (req, res) => {
       return;
     }
 
-    const validPassword = dbUserData.checkPassword(req.body.password);
-
-    if (!validPassword) {
-      res.status(400).json({ message: 'Incorrect password!' });
-      return;
-    }
 
     req.session.save(() => {
-      // declare session variables
-      req.session.user_id = dbUserData.id;
-      req.session.username = dbUserData.username;
       req.session.loggedIn = true;
 
-      res.json({ user: dbUserData, message: 'You are now logged in!' });
+      res
+        .status(200)
+        .json({ user: dbUserData, message: 'You are now logged in!' });
+
     });
   });
 });
