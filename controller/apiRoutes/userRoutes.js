@@ -7,7 +7,7 @@ router.get('/', (req, res) => {
   User.findAll({
     // used Attribute key and instructed the query to exclude the password column.
     // It's in an array because if we want to exclude more than one, we can just add more.
-    // attributes: { exclude: ['password'] }
+    attributes: { exclude: ['password'] }
   })
   .then(dbUserData => {
     req.session.save(() => {
@@ -69,7 +69,20 @@ router.post('/login', (req, res) => {
       res.status(400).json({ message: 'No user found!' });
       return;
     }
- 
+
+
+
+    // const validPassword = dbUserData.checkPassword(req.body.password);
+
+    // if (!validPassword) {
+    //   res.status(400).json({ message: 'Incorrect password!' });
+    //   return;
+    // }
+
+
+
+
+
     req.session.save(() => {
       req.session.loggedIn = true;
 
