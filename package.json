@@ -18,6 +18,7 @@
   },
   "homepage": "https://github.com/Dapr1nc3/workout-app#readme",
   "dependencies": {
+    "bcrypt": "^5.0.1",
     "connect-session-sequelize": "^7.1.2",
     "dotenv": "^14.3.0",
     "express": "^4.17.2",
