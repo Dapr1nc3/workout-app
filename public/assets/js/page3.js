@@ -1,16 +1,14 @@
-
-
 // FETCH EXERCISE DB API DATA. ALL EXERCISES THAT ONLY REQUIRE  NO EQUIPMENT
-var workout = function () {
+var workout = function (target) {
 	var API_Key = "463cbaf394msh91dc3d7f346a349p1d3252jsnbb618bc09a1d";
 
-	var apiUrl = `https://exercisedb.p.rapidapi.com/exercises/equipment/body%20weight?rapidapi-key=${API_Key}`;
+	var apiUrl = `https://exercisedb.p.rapidapi.com/exercises/target/${target}?rapidapi-key=${API_Key}`;
 
 	fetch(apiUrl).then(function (response) {
 		if (response.ok) {
 			response.json().then(function (data) {
 				// console.log(data);
-                selectTargetMuscle(data);
+				exerciseArray(data);
 			});
 		} else {
 			alert("Error");
@@ -18,77 +16,153 @@ var workout = function () {
 	});
 };
 
+// FILTERS BODY WEIGHT EXERCISES BY TARGET MUSCLE
+var exerciseArray = function (data) {
+	var bodyEquip = "body weight";
 
-// FILTERS BODY WEIGHT EXERCISES BY TARGET MUSCLE 
-var selectTargetMuscle = function (data) {
+	var bodyWeightArray = [];
 
-    var targetMuscle = "abs"
+	for (let i = 0; i < data.length; i++) {
+		if (data[i].equipment === bodyEquip) {
+			bodyWeightArray.push(data[i]);
+		}
+	}
 
-    if (data[0].target === targetMuscle) {
+    bodyWeightArray.splice(10);
+    
+    console.log(bodyWeightArray);
 
-        var carouselContainerEL = document.querySelector("#exercise_carousel_container")
+	displayExercises(bodyWeightArray);
 
-        var exerciseCardContainer = document.createElement("div")
+	
 
-        exerciseCardContainer.classList = "carousel-item active"
+	// if (data[0].equipment === bodyEquip) {
 
-        carouselContainerEL.appendChild(exerciseCardContainer)
+	//     var carouselContainerEL = document.querySelector("#exercise_carousel_container")
 
-        var nameEl = document.createElement("h1")
+	//     var exerciseCardContainer = document.createElement("div")
 
-        nameEl.classList = "text-center"
+	//     exerciseCardContainer.classList = "carousel-item active"
 
-        nameEl.textContent = data[0].name
+	//     carouselContainerEL.appendChild(exerciseCardContainer)
 
-        exerciseCardContainer.appendChild(nameEl)
+	//     var nameEl = document.createElement("h1")
 
-        var gifUrl = data[0].gifUrl;
+	//     nameEl.classList = "text-center"
+
+	//     nameEl.textContent = data[0].name
+
+	//     exerciseCardContainer.appendChild(nameEl)
+
+	//     var gifUrl = data[0].gifUrl;
+
+	//     var demoGifEl = document.createElement("img");
+
+	//     demoGifEl.classList = "d-block img-fluid"
+
+	//     demoGifEl.setAttribute("src", gifUrl);
+
+	//     exerciseCardContainer.appendChild(demoGifEl)
+	// }
+
+	// for (let i = 1; i < 5; i++) {
+
+	// 	if (data[i].equipment === bodyEquip) {
+	// 		// console.log(data[i]);
+
+	//         var carouselContainerEL = document.querySelector("#exercise_carousel_container")
+
+	//         var exerciseCardContainer = document.createElement("div")
+
+	//         exerciseCardContainer.classList = "carousel-item"
+
+	//         carouselContainerEL.appendChild(exerciseCardContainer)
+
+	//         var nameEl = document.createElement("h1")
+
+	//         nameEl.classList = "text-center"
+
+	//         nameEl.textContent = data[i].name
+
+	//         exerciseCardContainer.appendChild(nameEl)
+
+	//         var gifUrl = data[i].gifUrl;
+
+	//         var demoGifEl = document.createElement("img");
+
+	//         demoGifEl.classList = "d-block img-fluid"
+
+	//         demoGifEl.setAttribute("src", gifUrl);
+
+	//         exerciseCardContainer.appendChild(demoGifEl)
+
+	// 	}
+
+	// }
+};
+
+var displayExercises = function (exercises) {
+
+    if (exercises[0]) {
+        var carouselContainerEL = document.querySelector(
+            "#exercise_carousel_container"
+        );
+
+        var exerciseCardContainer = document.createElement("div");
+
+        exerciseCardContainer.classList = "carousel-item active";
+
+        carouselContainerEL.appendChild(exerciseCardContainer);
+
+        var nameEl = document.createElement("h1");
+
+        nameEl.classList = "text-center";
+
+        nameEl.textContent = exercises[0].name;
+
+        exerciseCardContainer.appendChild(nameEl);
+
+        var gifUrl = exercises[0].gifUrl;
 
         var demoGifEl = document.createElement("img");
-        
-        demoGifEl.classList = "d-block img-fluid"
+
+        demoGifEl.classList = "d-block img-fluid";
 
         demoGifEl.setAttribute("src", gifUrl);
-        
-        exerciseCardContainer.appendChild(demoGifEl)
+
+        exerciseCardContainer.appendChild(demoGifEl);
     }
+	for (let i = 1; i < exercises.length; i++) {
+		  {
+			var carouselContainerEL = document.querySelector(
+				"#exercise_carousel_container"
+			);
 
-    for (let i = 1; i < 5; i++) {
-        
+			var exerciseCardContainer = document.createElement("div");
 
+			exerciseCardContainer.classList = "carousel-item";
 
-		if (data[i].target === targetMuscle) {
-			// console.log(data[i]);
+			carouselContainerEL.appendChild(exerciseCardContainer);
 
-            var carouselContainerEL = document.querySelector("#exercise_carousel_container")
+			var nameEl = document.createElement("h1");
 
-            var exerciseCardContainer = document.createElement("div")
+			nameEl.classList = "text-center";
 
-            exerciseCardContainer.classList = "carousel-item"
+			nameEl.textContent = exercises[i].name;
 
-            carouselContainerEL.appendChild(exerciseCardContainer)
+			exerciseCardContainer.appendChild(nameEl);
 
-            var nameEl = document.createElement("h1")
+			var gifUrl = exercises[i].gifUrl;
 
-            nameEl.classList = "text-center"
+			var demoGifEl = document.createElement("img");
 
-            nameEl.textContent = data[i].name
+			demoGifEl.classList = "d-block img-fluid";
 
-            exerciseCardContainer.appendChild(nameEl)
+			demoGifEl.setAttribute("src", gifUrl);
 
-            var gifUrl = data[i].gifUrl;
-
-            var demoGifEl = document.createElement("img");
-            
-            demoGifEl.classList = "d-block img-fluid"
-
-            demoGifEl.setAttribute("src", gifUrl);
-            
-            exerciseCardContainer.appendChild(demoGifEl)
-
+			exerciseCardContainer.appendChild(demoGifEl);
 		}
-
 	}
 };
 
-// workout();
+workout("abs");
