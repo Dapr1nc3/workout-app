@@ -1,6 +1,5 @@
 
 
-
 // FETCH EXERCISE DB API DATA. ALL EXERCISES THAT ONLY REQUIRE  NO EQUIPMENT
 var workout = function () {
 	var API_Key = "463cbaf394msh91dc3d7f346a349p1d3252jsnbb618bc09a1d";
@@ -26,6 +25,7 @@ var selectTargetMuscle = function (data) {
     var targetMuscle = "abs"
 
     if (data[0].target === targetMuscle) {
+
         var carouselContainerEL = document.querySelector("#exercise_carousel_container")
 
         var exerciseCardContainer = document.createElement("div")
@@ -46,7 +46,7 @@ var selectTargetMuscle = function (data) {
 
         var demoGifEl = document.createElement("img");
         
-        demoGifEl.classList = "rounded mx-auto d-block p-5"
+        demoGifEl.classList = "d-block img-fluid"
 
         demoGifEl.setAttribute("src", gifUrl);
         
@@ -80,7 +80,7 @@ var selectTargetMuscle = function (data) {
 
             var demoGifEl = document.createElement("img");
             
-            demoGifEl.classList = "rounded mx-auto d-block p-5"
+            demoGifEl.classList = "d-block img-fluid"
 
             demoGifEl.setAttribute("src", gifUrl);
             
