@@ -27,6 +27,7 @@ app.use(express.static('public'));
 app.engine('handlebars', hbs.engine);
 app.set('view engine', 'handlebars');
 
+
 // routes
 app.use(routes)
 
