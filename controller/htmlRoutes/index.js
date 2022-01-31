@@ -1,5 +1,6 @@
 const router = require('express').Router();
 const path = require('path');
+const withAuth = require('../../utils/auth');
 
 // route for landing page 
 router.get('/', (req,res) => {
@@ -8,11 +9,14 @@ router.get('/', (req,res) => {
 
 // route for page 2
 router.get('/page2', (req, res) => {
+    if(!req.session.loggedIn){
+        res.redirect('/')
+    } 
     res.sendFile(path.join(__dirname, '../.././public/page2.html'));
 });
 
 // route for page 3 
-router.get('/page3', (req,res) => {
+router.get('/page3', withAuth, (req,res) => {
     res.sendFile(path.join(__dirname, '../.././public/page3.html'));
 });
 

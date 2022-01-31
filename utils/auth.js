@@ -1,9 +1,13 @@
+
+
 const withAuth = (req, res, next) => {
+    // console.log(req.session);
     if(!req.session.user_id){
-        res.redirect("/page1")
+        
+        res.redirect("/")
     } else {
         next()
     }
 };
 
-module.exports = withAuth
+module.exports = withAuth;
