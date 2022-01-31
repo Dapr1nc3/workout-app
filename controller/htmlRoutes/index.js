@@ -19,8 +19,8 @@ router.get('/page3', (req,res) => {
 });
 
 // route for page 4
-router.get('/page4', (req, res) => {
-    res.render("page4")
-});
+router.get('/signup', (req, res) => {
+    res.render('page4');
+  });
 
 module.exports = router

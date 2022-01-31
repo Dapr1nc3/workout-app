@@ -20,7 +20,7 @@ async function signupFormHandler(event) {
   
       // check the response status
       if (response.ok) {
-        console.log('success');
+        document.location.replace('/page3');
       } else {
         alert(response.statusText);
       }

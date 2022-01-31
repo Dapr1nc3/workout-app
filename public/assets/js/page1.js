@@ -1,27 +1,27 @@
-const console = require("console")
+// const console = require("console")
 
-function submitLogin() {
-    const userName = document.getElementById("username").value.trim()
-    const password = document.getElementById("password").value.trim()
+// function submitLogin() {
+//     const userName = document.getElementById("username").value.trim()
+//     const password = document.getElementById("password").value.trim()
 
-   if(userName&&password){
-       fetch("/login", {
-           method: "post",
-           body: JSON.stringify({
-               userName,
-               password
-           }),
-           headers: {
-                "Content-Type": "application/json"
-           }
-       }).then((response) => {
-           console.log(response);
-       }).catch((error) => {
-           alert(error) 
-           console.log(error)
-       })
-   };
-};
+//    if(userName&&password){
+//        fetch("/login", {
+//            method: "post",
+//            body: JSON.stringify({
+//                userName,
+//                password
+//            }),
+//            headers: {
+//                 "Content-Type": "application/json"
+//            }
+//        }).then((response) => {
+//            console.log(response);
+//        }).catch((error) => {
+//            alert(error) 
+//            console.log(error)
+//        })
+//    };
+// };
 
 
 //   LOGIN 
@@ -32,7 +32,7 @@ async function loginFormHandler(event) {
     const password = document.querySelector('#password').value.trim();
   
     if (email && password) {
-      const response = await fetch('/api/users/login', {
+      const response = await fetch('/api/users', {
         method: 'post',
         body: JSON.stringify({
           email,
@@ -42,7 +42,7 @@ async function loginFormHandler(event) {
       });
   
       if (response.ok) {
-        document.location.replace('/');
+        document.location.replace('/page2');
       } else {
         alert(response.statusText);
       }
