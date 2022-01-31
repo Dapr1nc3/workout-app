@@ -1,24 +1,26 @@
-const console = require("console")
+//   LOGIN 
+async function loginFormHandler(event) {
+  event.preventDefault();
 
-function submitLogin() {
-    const userName = document.getElementById("username").value.trim()
-    const password = document.getElementById("password").value.trim()
+  const email = document.querySelector('#email-login').value.trim();
+  const password = document.querySelector('#password-login').value.trim();
 
-   if(userName&&password){
-       fetch("/login", {
-           method: "post",
-           body: JSON.stringify({
-               userName,
-               password
-           }),
-           headers: {
-                "Content-Type": "application/json"
-           }
-       }).then((response) => {
-           console.log(response);
-       }).catch((error) => {
-           alert(error) 
-           console.log(error)
-       })
-   };
-};
+  if (email && password) {
+    const response = await fetch('/api/users/login', {
+      method: 'post',
+      body: JSON.stringify({
+        email,
+        password
+      }),
+      headers: { 'Content-Type': 'application/json' }
+    });
+
+    if (response.ok) {
+      document.location.replace('/page3');
+    } else {
+      alert(response.statusText);
+    }
+  }
+}
+
+document.querySelector('.login-form').addEventListener('submit', loginFormHandler);
