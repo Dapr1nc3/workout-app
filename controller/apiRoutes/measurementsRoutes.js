@@ -9,13 +9,13 @@ router.get("/", (req, res) => {
     // It's in an array because if we want to exclude more than one, we can just add more.
     // Ex: attributes: { exclude: ['password'] }
    // Query configuration
-  //  attributes: ["id", "height", "weight", "body_mass", "fat_percentage"], 
-  //  include: [
-  //    {
-  //      model: User,
-  //      attributes: ["username"],
-  //    },
-  //  ],
+   attributes: ["id", "height", "weight", "body_mass", "fat_percentage"], 
+   include: [
+     {
+       model: User,
+       attributes: ["username"],
+     },
+   ],
   })
     .then((dbUserData) => res.json(dbUserData))
     .catch((err) => {

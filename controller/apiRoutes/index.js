@@ -7,6 +7,6 @@ const measurementsRoutes = require('./measurementsRoutes');
 
 // having the router use /users to access the different route folders
 router.use('/users', userRoutes);
-router.use('/users/measurements', measurementsRoutes);
+router.use('/measurements', measurementsRoutes);
 
 module.exports = router; 
