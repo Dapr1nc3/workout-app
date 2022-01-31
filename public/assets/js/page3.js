@@ -89,3 +89,13 @@ var selectTargetMuscle = function (data) {
 };
 
 // workout();
+
+
+//just testing out for user's name showing up on user's page
+// const welcomeUser = (id) => {
+//     const welcomeElement = document.getElementById('welcome-name')
+//     fetch(`/api/users/${id}`) 
+//     .then(res => {
+//         welcomeElement.innerHTML = `Welcome ${res.json().username}`
+//     })
+// }
