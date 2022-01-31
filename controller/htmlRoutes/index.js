@@ -14,7 +14,7 @@ router.get('/page2', (req, res) => {
 });
 
 // route for page 3 
-router.get('/page3', (req,res) => {
+router.get('/page3' , (req,res) => {
     res.render("page3")
 });
 
