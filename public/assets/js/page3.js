@@ -1,3 +1,8 @@
+const radiolabels = document.querySelectorAll('input[name="target_muscle"]')
+
+const btns = document.querySelectorAll(".btn")
+
+
 // FETCH EXERCISE DB API DATA. ALL EXERCISES THAT ONLY REQUIRE  NO EQUIPMENT
 var workout = function (target) {
 	var API_Key = "463cbaf394msh91dc3d7f346a349p1d3252jsnbb618bc09a1d";
@@ -16,8 +21,26 @@ var workout = function (target) {
 	});
 };
 
+var targetMuscleExercises = function () {
+    var checkedTargetMuscle = document.querySelector('input[name="target_muscle"]:checked').value
+
+    workout(checkedTargetMuscle);
+}
+
+// var formSubmitHandler = function () {
+
+// 	var chosenbodyPart = document.querySelector(
+// 		'input[name="target_muscle"]:checked'
+// 	).value;
+
+// 	console.log(chosenbodyPart);
+// };
+
+// options.addEventListener("click", formSubmitHandler);
+
 // FILTERS BODY WEIGHT EXERCISES BY TARGET MUSCLE
 var exerciseArray = function (data) {
+
 	var bodyEquip = "body weight";
 
 	var bodyWeightArray = [];
@@ -103,10 +126,16 @@ var exerciseArray = function (data) {
 
 var displayExercises = function (exercises) {
 
+    var carouselContainerEL = document.querySelector(
+        "#exercise_carousel_container"
+    );
+
+    carouselContainerEL.innerHTML = ""
+
     if (exercises[0]) {
-        var carouselContainerEL = document.querySelector(
-            "#exercise_carousel_container"
-        );
+        // var carouselContainerEL = document.querySelector(
+        //     "#exercise_carousel_container"
+        // );
 
         var exerciseCardContainer = document.createElement("div");
 
@@ -134,9 +163,9 @@ var displayExercises = function (exercises) {
     }
 	for (let i = 1; i < exercises.length; i++) {
 		  {
-			var carouselContainerEL = document.querySelector(
-				"#exercise_carousel_container"
-			);
+			// var carouselContainerEL = document.querySelector(
+			// 	"#exercise_carousel_container"
+			// );
 
 			var exerciseCardContainer = document.createElement("div");
 
