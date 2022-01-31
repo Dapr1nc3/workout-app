@@ -1,14 +1,15 @@
-// const console = require("console")
+// const loginform = document.getElementById("login-form");
 
-// function submitLogin() {
-//     const userName = document.getElementById("username").value.trim()
+// function submitLogin(e) {
+//     e.preventDefault();
+//     const username = document.getElementById("username").value.trim()
 //     const password = document.getElementById("password").value.trim()
 
-//    if(userName&&password){
-//        fetch("/login", {
+//    if(username&&password){
+//        fetch('/api/users', {
 //            method: "post",
 //            body: JSON.stringify({
-//                userName,
+//                username,
 //                password
 //            }),
 //            headers: {
@@ -16,12 +17,15 @@
 //            }
 //        }).then((response) => {
 //            console.log(response);
+//            document.location.replace("/page2")
 //        }).catch((error) => {
 //            alert(error) 
 //            console.log(error)
 //        })
 //    };
 // };
+
+// loginform.addEventListener('submit', submitLogin);
 
 
 //   LOGIN 
@@ -42,7 +46,7 @@ async function loginFormHandler(event) {
       });
   
       if (response.ok) {
-        document.location.replace('/page2');
+        document.location.replace('/page3');
       } else {
         alert(response.statusText);
       }

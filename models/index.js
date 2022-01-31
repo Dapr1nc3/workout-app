@@ -1,6 +1,6 @@
 // packages all the models in one file 
 const Measurements = require('./Measurements');
-const User = require('./Users');
+const User = require('./User');
 
 User.hasOne(Measurements, {
     foreignKey: "user_id",

@@ -6,7 +6,6 @@ router.get('/', (req, res) => {
   // Access our User model and run .findAll() method
   User.findAll({
     // used Attribute key and instructed the query to exclude the password column.
-    attributes: { exclude: ['password'] }
     // It's in an array because if we want to exclude more than one, we can just add more.
     // attributes: { exclude: ['password'] }
   })
@@ -79,12 +78,11 @@ router.post('/login', (req, res) => {
     }
 
     req.session.save(() => {
-      // declare session variables
-      req.session.user_id = dbUserData.id;
-      req.session.username = dbUserData.username;
       req.session.loggedIn = true;
 
-      res.json({ user: dbUserData, message: 'You are now logged in!' });
+      res
+        .status(200)
+        .json({ user: dbUserData, message: 'You are now logged in!' });
     });
   });
 });
