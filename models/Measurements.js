@@ -11,22 +11,29 @@ Measurements.init(
       primaryKey: true,
       autoIncrement: true,
     },
-    Height: {
-      type: DataTypes.INTEGER,
-      allowNull: True,
-    },
-    Weight: {
-      type: DataTypes.INTEGER,
-      allowNull: true,
-      },
-    Fat_Percentage: {
+    height: {
       type: DataTypes.INTEGER,
       allowNull: true,
     },
-    Body_Mass: {
-        type: DataTypes.INTEGER,
-        allowNull: true,
+    weight: {
+      type: DataTypes.INTEGER,
+      allowNull: true,
+    },
+    fat_percentage: {
+      type: DataTypes.INTEGER,
+      allowNull: true,
+    },
+    body_mass: {
+      type: DataTypes.INTEGER,
+      allowNull: true,
+    },
+    user_id: {
+      type: DataTypes.INTEGER,
+      references: {
+        model: "user",
+        key: "id",
       },
+    },
   },
   {
     // TABLE CONFIGURATION OPTIONS GO HERE (https://sequelize.org/v5/manual/models-definition.html#configuration))

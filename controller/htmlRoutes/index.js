@@ -18,7 +18,7 @@ router.get('/page3', (req,res) => {
 
 // route for page 4
 router.get('/page4', (req, res) => {
-    res.sendFile(path.join(__dirname, '../.././public/page4.html'));
+    res.render("page4")
 });
 
 module.exports = router
