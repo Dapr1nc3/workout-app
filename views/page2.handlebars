@@ -9,11 +9,46 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
         integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous" />
     <link href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap" rel="stylesheet" />
-    <link rel="stylesheet" href="./assets/css/page2.css"/>
+    <link rel="stylesheet" href="./assets/css/page2.css" />
     <title>NGF.com</title>
 </head>
 
 <body>
+
+    <!-- navbar -->
+    <div class="container-fluid">
+        <nav class="navbar navbar-expand-lg sticky-top navbar-light" style="background-color: #21295c;">
+            <div class="container-fluid">
+                <a href="#" class="navbar-brand text-light" style="font-size: 50px;">NGF</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navmenu">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class="collapse navbar-collapse" id="navmenu">
+                    <ul class="navbar-nav ms-auto justify-content-end">
+                        <li class="nav-item">
+                            <a class="nav-link text-light" href="/">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link  text-light" href="/page2">My Page</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link  text-light" href="/page3">Workout</a>
+                        </li>
+                        <li class="nav-item">
+                            <button type="button" class="btn btn-primary" style="background-color: #74d3ae;"
+                                data-bs-toggle="modal" data-bs-target="#get-started">Sign up / Login</button>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </div>
+
+    <!-- navbar end -->
+
+
+
     <!-- title of page -->
     <header class="jumbotron text-center">
         <h1 class="display-3">Workout Schedule</h1>
@@ -24,56 +59,57 @@
 
     <!-- days of week planner -->
 
-        <div class="container-fluid">
-            <h1 class="text-center workWeek">Workout for the Week</h1>
-            <div id="9am" class="row time-block p-3">
-                <div class="hour col-md-1">Monday</div>
-                <textarea name="text-area" id="text-area" class="col-md-10 description" style="color: #FCF7F8;">
+    <div class="container-fluid">
+        <h1 class="text-center workWeek">Workout for the Week</h1>
+        <div id="9am" class="row time-block p-3">
+            <div class="hour col-md-1">Monday</div>
+            <textarea name="text-area" id="text-area" class="col-md-10 description" style="color: #FCF7F8;">
             </textarea>
-                <button class="btn saveBtn col-md-1">Save<br /><i class="fas fa-save"></i></button>
-            </div>
-            <div id="10am" class="row time-block p-3">
-                <div class="hour col-md-1">Tuesday</div>
-                <textarea name="text-area" id="text-area-2" class="col-md-10 description" style="color: #FCF7F8;">
-            </textarea>
-                <button class="btn saveBtn col-md-1">Save<br /><i class="fas fa-save"></i></button>
-            </div>
-            <div id="11am" class="row time-block p-3">
-                <div class="hour col-md-1">Wednesday</div>
-                <textarea name="text-area" id="text-area-3" class="col-md-10 description" style="color: #FCF7F8;">
-            </textarea>
-                <button class="btn saveBtn col-md-1">Save<br /><i class="fas fa-save"></i></button>
-            </div>
-            <div id="12pm" class="row time-block p-3">
-                <div class="hour col-md-1">Thursday</div>
-                <textarea name="text-area" id="text-area-4" class="col-md-10 description" style="color: #FCF7F8;">
-            </textarea>
-                <button class="btn saveBtn col-md-1">Save<br /><i class="fas fa-save"></i></button>
-            </div>
-            <div id="1pm" class="row time-block p-3">
-                <div class="hour col-md-1">Friday</div>
-                <textarea name="text-area" id="text-area-5" class="col-md-10 description" style="color: #FCF7F8;">
-            </textarea>
-                <button class="btn saveBtn col-md-1">Save<br /><i class="fas fa-save"></i></button>
-            </div>
-            <div id="2pm" class="row time-block p-3">
-                <div class="hour col-md-1">Saturday</div>
-                <textarea name="text-area" id="text-area-6" class="col-md-10 description" style="color: #FCF7F8;">
-            </textarea>
-                <button class="btn saveBtn col-md-1">Save<br /><i class="fas fa-save"></i></button>
-            </div>
-            <div id="3pm" class="row time-block p-3">
-                <div class="hour col-md-1">Sunday</div>
-                <textarea name="text-area" id="text-area-7" class="col-md-10 description" style="color: #FCF7F8;">
-            </textarea>
-                <button class="btn saveBtn col-md-1">Save<br /><i class="fas fa-save"></i></button>
-            </div>
+            <button class="btn saveBtn col-md-1">Save<br /><i class="fas fa-save"></i></button>
         </div>
+        <div id="10am" class="row time-block p-3">
+            <div class="hour col-md-1">Tuesday</div>
+            <textarea name="text-area" id="text-area-2" class="col-md-10 description" style="color: #FCF7F8;">
+            </textarea>
+            <button class="btn saveBtn col-md-1">Save<br /><i class="fas fa-save"></i></button>
+        </div>
+        <div id="11am" class="row time-block p-3">
+            <div class="hour col-md-1">Wednesday</div>
+            <textarea name="text-area" id="text-area-3" class="col-md-10 description" style="color: #FCF7F8;">
+            </textarea>
+            <button class="btn saveBtn col-md-1">Save<br /><i class="fas fa-save"></i></button>
+        </div>
+        <div id="12pm" class="row time-block p-3">
+            <div class="hour col-md-1">Thursday</div>
+            <textarea name="text-area" id="text-area-4" class="col-md-10 description" style="color: #FCF7F8;">
+            </textarea>
+            <button class="btn saveBtn col-md-1">Save<br /><i class="fas fa-save"></i></button>
+        </div>
+        <div id="1pm" class="row time-block p-3">
+            <div class="hour col-md-1">Friday</div>
+            <textarea name="text-area" id="text-area-5" class="col-md-10 description" style="color: #FCF7F8;">
+            </textarea>
+            <button class="btn saveBtn col-md-1">Save<br /><i class="fas fa-save"></i></button>
+        </div>
+        <div id="2pm" class="row time-block p-3">
+            <div class="hour col-md-1">Saturday</div>
+            <textarea name="text-area" id="text-area-6" class="col-md-10 description" style="color: #FCF7F8;">
+            </textarea>
+            <button class="btn saveBtn col-md-1">Save<br /><i class="fas fa-save"></i></button>
+        </div>
+        <div id="3pm" class="row time-block p-3">
+            <div class="hour col-md-1">Sunday</div>
+            <textarea name="text-area" id="text-area-7" class="col-md-10 description" style="color: #FCF7F8;">
+            </textarea>
+            <button class="btn saveBtn col-md-1">Save<br /><i class="fas fa-save"></i></button>
+        </div>
+    </div>
     <!-- days of week planner end -->
 
     <!-- Measurements section -->
     <section class="p-5" style="background-color: #21295c;margin-top: 50px;">
-        <div class="container p-5" style="background-color: #FCF7F8; padding-top: 60px;border-top-width: 100px;margin-top: 60px;">
+        <div class="container p-5"
+            style="background-color: #FCF7F8; padding-top: 60px;border-top-width: 100px;margin-top: 60px;">
             <h1 style="color: #21295c;">My Current Measurements</h1>
             <ul>
                 <li class="measure-item">
@@ -89,10 +125,10 @@
                     Body Mass:
                 </li>
             </ul>
-              <!-- Measurements section end-->
+            <!-- Measurements section end-->
 
             <!-- Goals section -->
-            <h1 class= "my-goals"style="color: #21295c;">My Goals</h1>
+            <h1 class="my-goals" style="color: #21295c;">My Goals</h1>
             <p class="p-2"><b>What is your goal for the week?</b></p>
             <textarea name="text-area" id="text-area" class="col-md-10 description" style="color: #FCF7F8;">
                 type here...
@@ -108,12 +144,12 @@
             <!-- Goals section end -->
         </div>
     </section>
-    
+
 
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
-    <script src="./assets/js/page2.js"></script>
-    
+    <script src="../public/assets/js/page2.js"></script>
+
 </body>
 
 </html>
