@@ -1,3 +1,7 @@
+$(document).ready(function () {
+
+});
+
 //   LOGIN 
 async function loginFormHandler(event) {
     event.preventDefault();
@@ -25,3 +29,19 @@ async function loginFormHandler(event) {
 
 
 document.querySelector('.login-form').addEventListener('submit', loginFormHandler);
+
+// contact us 
+let contactEmail = document.querySelector("#contact-email")
+let contactName = document.querySelector("#name")
+let contactPhone = document.querySelector("#phone")
+
+
+// saving them to local stotage 
+contactEmail.value = localStorage.getItem("result")
+contactName.value = localStorage.getItem("result-2")
+contactPhone.value = localStorage.getItem("result-3")
+
+// function that lets them stay after the refresh 
+contactEmail.addEventListener("keyup", event => {
+  localStorage.setItem("result", textArea.value)
+})

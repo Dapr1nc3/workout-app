@@ -14,12 +14,37 @@
 </head>
 
 <body>
-    <!-- nav bar -->
-    <nav class="navbar navbar-expand-lg sticky-top">
-        <h1 class="p-3">NGF</h1>
-        <h3 class="nav-item navbar-brand ">NO GEAR FITNESS</h3>
-        <a href="/" class="nav-link ms-auto justify-content-end text-light p-3" style="font-size:20px; text-decoration:underline; ">HOME</a>
-    </nav>
+     <!-- navbar -->
+    <div class="container-fluid">
+        <nav class="navbar navbar-expand-lg sticky-top navbar-light" style="background-color: #21295c;">
+            <div class="container-fluid">
+                <a href="#" class="navbar-brand text-light" style="font-size: 50px;">NGF</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navmenu">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class="collapse navbar-collapse" id="navmenu">
+                    <ul class="navbar-nav ms-auto justify-content-end">
+                        <li class="nav-item">
+                            <a class="nav-link text-light" href="/">Home</a>
+                        </li>
+                        {{!-- <li class="nav-item">
+                            <a class="nav-link  text-light" href="/page2">My Page</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link  text-light" href="/page3">Workout</a>
+                        </li> --}}
+                        <li class="nav-item">
+                            <button type="button" class="btn btn-primary" style="background-color: #74d3ae;"
+                                data-bs-toggle="modal" data-bs-target="#get-started">Sign up / Login</button>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </div>
+
+    <!-- navbar end -->
 
 
  
