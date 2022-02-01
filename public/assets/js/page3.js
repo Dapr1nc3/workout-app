@@ -108,23 +108,17 @@ var displayExercises = function (exercises) {
   }
 };
 
-function endSession(event) {
-  // event.preventDefault();
-  console.log('connected');
+async function logout() {
+  const response = await fetch('/api/users/logout', {
+    method: 'post',
+    headers: { 'Content-Type': 'application/json' }
+  });
 
-  // await fetch("/api/users/logout", {
-  //   method: "post",
-  //   body: JSON.stringify({
-  //     username,
-  //     password,
-  //   }),
-  //   headers: { "Content-Type": "application/json" },
-  // });
-  // if (response.ok) {
-  //   document.location.replace("/");
-  // } else {
-  //   alert(response.statusText);
-  // }
-};
+  if (response.ok) {
+    document.location.replace('/');
+  } else {
+    alert(response.statusText);
+  }
+}
 
-document.getElementById("logout").addEventListener("onclick", endSession);
+document.querySelector('#logout').addEventListener('click', logout);
