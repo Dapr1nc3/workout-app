@@ -1,6 +1,7 @@
 const withAuth = (req, res, next) => {
+  console.log(req.session.user_id);
   if (!req.session.user_id) {
-    res.redirect("/page1");
+    res.redirect("/signup");
   } else {
     next();
   }

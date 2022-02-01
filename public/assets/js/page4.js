@@ -17,13 +17,24 @@ async function signupFormHandler(event) {
       headers: { "Content-Type": "application/json" },
     });
 
+    if (username && password) {
+      const response = fetch("/api/users/login", {
+        method: "post",
+        body: JSON.stringify({
+          username,
+          password,
+        }),
+        headers: { "Content-Type": "application/json" },
+      });
+  
+
     // check the response status
     if (response.ok) {
       document.location.replace("/page3");
     } else {
       alert(response.statusText);
     }
-  }
+  }}
 }
 
 document

@@ -1,5 +1,5 @@
 const router = require("express").Router();
-
+const authorization = require("../../loggedIn/auth");
 const path = require("path");
 
 // route for landing page
@@ -8,12 +8,12 @@ router.get("/", (req, res) => {
 });
 
 // route for page 2
-router.get("/page2", (req, res) => {
+router.get("/page2", authorization, (req, res) => {
   res.render("page2");
 });
 
 // route for page 3
-router.get("/page3", (req, res) => {
+router.get("/page3", authorization, (req, res) => {
   res.render("page3");
 });
 
