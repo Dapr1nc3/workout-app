@@ -1,5 +1,4 @@
 // $(document).ready(function () {});
-
 // SIGNUP
 async function signupFormHandler(event) {
   event.preventDefault();
