@@ -1,10 +1,10 @@
 const express = require("express");
 const sequelize = require("./config/connection");
-const path = require('path');
-const session = require('express-session');
-const SequelizeStore = require('connect-session-sequelize')(session.Store);
-const routes = require('./controller');
-const exphbs = require('express-handlebars');
+const path = require("path");
+const session = require("express-session");
+const SequelizeStore = require("connect-session-sequelize")(session.Store);
+const routes = require("./controller");
+const exphbs = require("express-handlebars");
 const hbs = exphbs.create({});
 const sess = {
   secret: "secret",
@@ -12,24 +12,23 @@ const sess = {
   resave: false,
   saveUninitialized: true,
   store: new SequelizeStore({
-    db: sequelize
-  })
+    db: sequelize,
+  }),
 };
 
 const app = express();
 const PORT = process.env.PORT || 3001;
 
-// express middleware 
+// express middleware
 app.use(session(sess));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
-app.use(express.static('public'));
-app.engine('handlebars', hbs.engine);
-app.set('view engine', 'handlebars');
-
+app.use(express.static("public"));
+app.engine("handlebars", hbs.engine);
+app.set("view engine", "handlebars");
 
 // routes
-app.use(routes)
+app.use(routes);
 
 // turn on connection to db and server
 sequelize.sync({ force: false }).then(() => {

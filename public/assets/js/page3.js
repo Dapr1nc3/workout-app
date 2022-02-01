@@ -1,113 +1,108 @@
 // FETCH EXERCISE DB API DATA. ALL EXERCISES THAT ONLY REQUIRE  NO EQUIPMENT
 var workout = function (target) {
-	var API_Key = "463cbaf394msh91dc3d7f346a349p1d3252jsnbb618bc09a1d";
+  var API_Key = "463cbaf394msh91dc3d7f346a349p1d3252jsnbb618bc09a1d";
 
-	var apiUrl = `https://exercisedb.p.rapidapi.com/exercises/target/${target}?rapidapi-key=${API_Key}`;
+  var apiUrl = `https://exercisedb.p.rapidapi.com/exercises/target/${target}?rapidapi-key=${API_Key}`;
 
-	fetch(apiUrl).then(function (response) {
-		if (response.ok) {
-			response.json().then(function (data) {
-				// console.log(data);
-				exerciseArray(data);
-			});
-		} else {
-			alert("Error");
-		}
-	});
+  fetch(apiUrl).then(function (response) {
+    if (response.ok) {
+      response.json().then(function (data) {
+        // console.log(data);
+        exerciseArray(data);
+      });
+    } else {
+      alert("Error");
+    }
+  });
 };
 
 // ON CLICK EVENT ATTACHED TO HTML SEARCH FILTER BUTTONS
 var targetMuscleExercises = function () {
-    var checkedTargetMuscle = document.querySelector('input[name="target_muscle"]:checked').value
+  var checkedTargetMuscle = document.querySelector(
+    'input[name="target_muscle"]:checked'
+  ).value;
 
-    //  workout(checkedTargetMuscle);
-}
-
+  //  workout(checkedTargetMuscle);
+};
 
 // FILTERS OUT BODY WEIGHT EXERCISES INTO A NEW ARRAY
 var exerciseArray = function (data) {
+  var bodyEquip = "body weight";
 
-	var bodyEquip = "body weight";
+  var bodyWeightArray = [];
 
-	var bodyWeightArray = [];
+  for (let i = 0; i < data.length; i++) {
+    if (data[i].equipment === bodyEquip) {
+      bodyWeightArray.push(data[i]);
+    }
+  }
 
-	for (let i = 0; i < data.length; i++) {
-		if (data[i].equipment === bodyEquip) {
-			bodyWeightArray.push(data[i]);
-		}
-	}
+  bodyWeightArray.splice(10);
 
-    bodyWeightArray.splice(10);
-    
-    console.log(bodyWeightArray);
+  console.log(bodyWeightArray);
 
-	displayExercises(bodyWeightArray);
-
+  displayExercises(bodyWeightArray);
 };
-
 
 // APPENDS GIFS INTO CAROUSEL ON THE PAGE (FIRST ONE NEEDS TO BE "ACTIVE")
 
 var displayExercises = function (exercises) {
+  var carouselContainerEL = document.querySelector(
+    "#exercise_carousel_container"
+  );
 
-    var carouselContainerEL = document.querySelector(
-        "#exercise_carousel_container"
-    );
+  carouselContainerEL.innerHTML = "";
 
-    carouselContainerEL.innerHTML = ""
+  if (exercises[0]) {
+    var exerciseCardContainer = document.createElement("div");
 
-    if (exercises[0]) {
+    exerciseCardContainer.classList = "carousel-item active";
 
-        var exerciseCardContainer = document.createElement("div");
+    carouselContainerEL.appendChild(exerciseCardContainer);
 
-        exerciseCardContainer.classList = "carousel-item active";
+    var nameEl = document.createElement("h1");
 
-        carouselContainerEL.appendChild(exerciseCardContainer);
+    nameEl.classList = "text-center";
 
-        var nameEl = document.createElement("h1");
+    nameEl.textContent = exercises[0].name;
 
-        nameEl.classList = "text-center";
+    exerciseCardContainer.appendChild(nameEl);
 
-        nameEl.textContent = exercises[0].name;
+    var gifUrl = exercises[0].gifUrl;
 
-        exerciseCardContainer.appendChild(nameEl);
+    var demoGifEl = document.createElement("img");
 
-        var gifUrl = exercises[0].gifUrl;
+    demoGifEl.classList = "d-block img-fluid";
 
-        var demoGifEl = document.createElement("img");
+    demoGifEl.setAttribute("src", gifUrl);
 
-        demoGifEl.classList = "d-block img-fluid";
+    exerciseCardContainer.appendChild(demoGifEl);
+  }
+  for (let i = 1; i < exercises.length; i++) {
+    {
+      var exerciseCardContainer = document.createElement("div");
 
-        demoGifEl.setAttribute("src", gifUrl);
+      exerciseCardContainer.classList = "carousel-item";
 
-        exerciseCardContainer.appendChild(demoGifEl);
+      carouselContainerEL.appendChild(exerciseCardContainer);
+
+      var nameEl = document.createElement("h1");
+
+      nameEl.classList = "text-center";
+
+      nameEl.textContent = exercises[i].name;
+
+      exerciseCardContainer.appendChild(nameEl);
+
+      var gifUrl = exercises[i].gifUrl;
+
+      var demoGifEl = document.createElement("img");
+
+      demoGifEl.classList = "d-block img-fluid";
+
+      demoGifEl.setAttribute("src", gifUrl);
+
+      exerciseCardContainer.appendChild(demoGifEl);
     }
-	for (let i = 1; i < exercises.length; i++) {
-		  {
-
-			var exerciseCardContainer = document.createElement("div");
-
-			exerciseCardContainer.classList = "carousel-item";
-
-			carouselContainerEL.appendChild(exerciseCardContainer);
-
-			var nameEl = document.createElement("h1");
-
-			nameEl.classList = "text-center";
-
-			nameEl.textContent = exercises[i].name;
-
-			exerciseCardContainer.appendChild(nameEl);
-
-			var gifUrl = exercises[i].gifUrl;
-
-			var demoGifEl = document.createElement("img");
-
-			demoGifEl.classList = "d-block img-fluid";
-
-			demoGifEl.setAttribute("src", gifUrl);
-
-			exerciseCardContainer.appendChild(demoGifEl);
-		}
-	}
+  }
 };

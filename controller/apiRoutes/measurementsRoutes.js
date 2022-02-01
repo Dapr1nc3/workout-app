@@ -8,14 +8,14 @@ router.get("/", (req, res) => {
     // used Attribute key and instructed the query to exclude the password column.
     // It's in an array because if we want to exclude more than one, we can just add more.
     // Ex: attributes: { exclude: ['password'] }
-   // Query configuration
-  //  attributes: ["id", "height", "weight", "body_mass", "fat_percentage"], 
-  //  include: [
-  //    {
-  //      model: User,
-  //      attributes: ["username"],
-  //    },
-  //  ],
+    // Query configuration
+    //  attributes: ["id", "height", "weight", "body_mass", "fat_percentage"],
+    //  include: [
+    //    {
+    //      model: User,
+    //      attributes: ["username"],
+    //    },
+    //  ],
   })
     .then((dbUserData) => res.json(dbUserData))
     .catch((err) => {
@@ -35,13 +35,13 @@ router.get("/:id", (req, res) => {
       id: req.params.id,
     },
     // Query configuration
-   attributes: ["id", "height", "weight", "body_mass", "fat_percentage"], 
-   include: [
-     {
-       model: User,
-       attributes: ["username"],
-     },
-   ],
+    attributes: ["id", "height", "weight", "body_mass", "fat_percentage"],
+    include: [
+      {
+        model: User,
+        attributes: ["username"],
+      },
+    ],
   })
     .then((dbUserData) => {
       if (!dbUserData) {
@@ -57,19 +57,19 @@ router.get("/:id", (req, res) => {
 });
 
 // POST /api/users/measurements - Create measurements for user
-router.post('/', (req, res) => {
- Measurements.create({
-   height: req.body.height,
-   weight: req.body.weight,
-   fat_percentage: req.body.fat_percentage,
-   body_mass: req.body.body_mass,
-   user_id: req.body.user_id 
- })
-   .then(dbUserData => res.json(dbUserData))
-   .catch(err => {
-     console.log(err);
-     res.status(500).json(err);
-   });
+router.post("/", (req, res) => {
+  Measurements.create({
+    height: req.body.height,
+    weight: req.body.weight,
+    fat_percentage: req.body.fat_percentage,
+    body_mass: req.body.body_mass,
+    user_id: req.body.user_id,
+  })
+    .then((dbUserData) => res.json(dbUserData))
+    .catch((err) => {
+      console.log(err);
+      res.status(500).json(err);
+    });
 });
 
 module.exports = router;
