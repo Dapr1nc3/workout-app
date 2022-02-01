@@ -1,3 +1,4 @@
+// $(document).ready(function () {});
 // FETCH EXERCISE DB API DATA. ALL EXERCISES THAT ONLY REQUIRE  NO EQUIPMENT
 var workout = function (target) {
   var API_Key = "463cbaf394msh91dc3d7f346a349p1d3252jsnbb618bc09a1d";
@@ -106,3 +107,24 @@ var displayExercises = function (exercises) {
     }
   }
 };
+
+function endSession(event) {
+  // event.preventDefault();
+  console.log('connected');
+
+  // await fetch("/api/users/logout", {
+  //   method: "post",
+  //   body: JSON.stringify({
+  //     username,
+  //     password,
+  //   }),
+  //   headers: { "Content-Type": "application/json" },
+  // });
+  // if (response.ok) {
+  //   document.location.replace("/");
+  // } else {
+  //   alert(response.statusText);
+  // }
+};
+
+document.getElementById("logout").addEventListener("onclick", endSession);
