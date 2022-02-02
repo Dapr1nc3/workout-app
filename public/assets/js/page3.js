@@ -23,7 +23,7 @@ var targetMuscleExercises = function () {
     'input[name="target_muscle"]:checked'
   ).value;
 
-  //  workout(checkedTargetMuscle);
+   workout(checkedTargetMuscle);
 };
 
 // FILTERS OUT BODY WEIGHT EXERCISES INTO A NEW ARRAY
