@@ -1,93 +1,50 @@
 $(document).ready(function () {});
+let userResults = {}
+const username = localStorage.getItem("current_user")
+const savedData = JSON.parse(localStorage.getItem((username)))
 
+const planner = document.getElementById('planner');
+planner.addEventListener("keyup",(event) => {
+  const {id, value} = event.target
+  userResults = { ...userResults, [id]: value}
+  console.log(userResults)
+  localStorage.setItem(username, JSON.stringify(userResults))
+  
+});
+console.log(savedData);
+console.log(savedData.textArea);
 //  so the text in the content can be displayed
-let textArea = document.querySelector("#text-area");
-let textArea2 = document.querySelector("#text-area-2");
-let textArea3 = document.querySelector("#text-area-3");
-let textArea4 = document.querySelector("#text-area-4");
-let textArea5 = document.querySelector("#text-area-5");
-let textArea6 = document.querySelector("#text-area-6");
-let textArea7 = document.querySelector("#text-area-7");
-let textArea8 = document.querySelector("#text-area-8");
-let textArea9 = document.querySelector("#text-area-9");
-let textArea10 = document.querySelector("#text-area-10");
-let textArea11 = document.querySelector("#text-area-11");
-let textArea12 = document.querySelector("#text-area-12");
-let textArea13 = document.querySelector("#text-area-13");
-let textArea14 = document.querySelector("#text-area-14");
+let textArea = document.querySelector("#textArea");
+let textArea2 = document.querySelector("#textArea2");
+let textArea3 = document.querySelector("#textArea3");
+let textArea4 = document.querySelector("#textArea4");
+let textArea5 = document.querySelector("#textArea5");
+let textArea6 = document.querySelector("#textArea6");
+let textArea7 = document.querySelector("#textArea7");
+let textArea8 = document.querySelector("#textArea8");
+let textArea9 = document.querySelector("#textArea9");
+let textArea10 = document.querySelector("#textArea10");
+let textArea11 = document.querySelector("#textArea11");
+let textArea12 = document.querySelector("#textArea12");
+let textArea13 = document.querySelector("#textArea13");
+let textArea14 = document.querySelector("#textArea14");
 
-// saving them to local stotage
-textArea.value = localStorage.getItem("result");
-textArea2.value = localStorage.getItem("result-2");
-textArea3.value = localStorage.getItem("result-3");
-textArea4.value = localStorage.getItem("result-4");
-textArea5.value = localStorage.getItem("result-5");
-textArea6.value = localStorage.getItem("result-6");
-textArea7.value = localStorage.getItem("result-7");
-textArea8.value = localStorage.getItem("result-8");
-textArea9.value = localStorage.getItem("result-9");
-textArea10.value = localStorage.getItem("result-10");
-textArea11.value = localStorage.getItem("result-11");
-textArea12.value = localStorage.getItem("result-12");
-textArea13.value = localStorage.getItem("result-13");
-textArea14.value = localStorage.getItem("result-14");
+// saving them to local storage
+textArea.innerHTML = savedData.textArea
+textArea2.innerHTML = savedData.textArea2;
+textArea3.innerHTML = savedData.textArea3;
+textArea4.innerHTML = savedData.textArea4;
+textArea5.innerHTML = savedData.textArea5;
+textArea6.innerHTML = savedData.textArea6;
+textArea7.innerHTML = savedData.textArea7;
+textArea8.innerHTML = savedData.textArea8;
+textArea9.innerHTML = savedData.textArea9;
+textArea10.innerHTML = savedData.textArea10;
+textArea11.innerHTML = savedData.textArea11;
+textArea12.innerHTML = savedData.textArea12;
+textArea13.innerHTML = savedData.textArea13;
+textArea14.innerHTML = savedData.textArea14;
 
-// function that lets them stay after the refresh
-textArea.addEventListener("keyup", (event) => {
-  localStorage.setItem("result", textArea.value);
-});
-
-textArea2.addEventListener("keyup", (event) => {
-  localStorage.setItem("result-2", textArea2.value);
-});
-
-textArea3.addEventListener("keyup", (event) => {
-  localStorage.setItem("result-3", textArea3.value);
-});
-
-textArea4.addEventListener("keyup", (event) => {
-  localStorage.setItem("result-4", textArea4.value);
-});
-
-textArea5.addEventListener("keyup", (event) => {
-  localStorage.setItem("result-5", textArea5.value);
-});
-
-textArea6.addEventListener("keyup", (event) => {
-  localStorage.setItem("result-6", textArea6.value);
-});
-
-textArea7.addEventListener("keyup", (event) => {
-  localStorage.setItem("result-7", textArea7.value);
-});
-
-textArea8.addEventListener("keyup", (event) => {
-  localStorage.setItem("result-8", textArea8.value);
-});
-
-textArea9.addEventListener("keyup", (event) => {
-  localStorage.setItem("result-9", textArea9.value);
-});
-
-textArea10.addEventListener("keyup", (event) => {
-  localStorage.setItem("result-10", textArea10.value);
-});
-
-textArea11.addEventListener("keyup", (event) => {
-  localStorage.setItem("result-11", textArea11.value);
-});
-
-textArea12.addEventListener("keyup", (event) => {
-  localStorage.setItem("result-12", textArea12.value);
-});
-
-textArea13.addEventListener("keyup", (event) => {
-  localStorage.setItem("result-13", textArea13.value);
-});
-
-textArea14.addEventListener("keyup", (event) => {
-  localStorage.setItem("result-14", textArea14.value);
-});
 
 // have the current date display on the screen
 var show = moment().format("MMMM Do YYYY, h:mm:a");
@@ -130,26 +87,6 @@ $("#goal-week . description").val(localStorage.getItem("goal-week"));
 $("#prev-goal . description").val(localStorage.getItem("prev-goal"));
 
 $("#chall-goal . description").val(localStorage.getItem("chall-goal"));
-
-
-// function endSession() {
-//   // event.preventDefault();
-//   console.log('connected');
-
-//   // await fetch("/api/users/logout", {
-//   //   method: "post",
-//   //   body: JSON.stringify({
-//   //     username,
-//   //     password,
-//   //   }),
-//   //   headers: { "Content-Type": "application/json" },
-//   // });
-//   // if (response.ok) {
-//   //   document.location.replace("/");
-//   // } else {
-//   //   alert(response.statusText);
-//   // }
-// };
 
 async function logout() {
   const response = await fetch('/api/users/logout', {

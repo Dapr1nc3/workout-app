@@ -5,6 +5,7 @@ const session = require("express-session");
 const SequelizeStore = require("connect-session-sequelize")(session.Store);
 const routes = require("./controller");
 const exphbs = require("express-handlebars");
+const { truncate } = require("fs/promises");
 const hbs = exphbs.create({});
 const sess = {
   secret: "secret",
