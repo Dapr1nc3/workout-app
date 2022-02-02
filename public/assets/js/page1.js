@@ -16,8 +16,30 @@ async function loginFormHandler(event) {
       }),
       headers: { "Content-Type": "application/json" },
     });
-    
+
     if (response.ok) {
+      window.localStorage.setItem("current_user", username);
+      const signedInUser = window.localStorage.getItem(username);
+      if (!signedInUser) {
+        const userData = {
+          textArea: "",
+          textArea2: "",
+          textArea3: "",
+          textArea4: "",
+          textArea5: "",
+          textArea6: "",
+          textArea7: "",
+          textArea8: "",
+          textArea9: "",
+          textArea10: "",
+          textArea11: "",
+          textArea12: "",
+          textArea13: "",
+          textArea14: "",
+        };
+        window.localStorage.setItem(username, JSON.stringify(userData));
+      }
+
       document.location.replace("/page3");
     } else {
       alert(response.statusText);
