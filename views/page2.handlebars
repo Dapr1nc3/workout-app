@@ -9,11 +9,15 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
         integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous" />
     <link href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap" rel="stylesheet" />
+        {{!-- Font --}}
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@1,200;1,300;1,600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./assets/css/page2.css"/>
     <title>NGF.com || My page</title>
 </head>
 
-<body>
+<body style="font-family: 'Exo 2', sans-serif;">
 
      <!-- navbar -->
     <div class="container-fluid">
@@ -27,17 +31,23 @@
                 <div class="collapse navbar-collapse" id="navmenu">
                     <ul class="navbar-nav ms-auto justify-content-end">
                         <li class="nav-item">
-                            <a class="nav-link text-light" href="/">Home</a>
+                        <a class="nav-link text-light" href="./#">Home</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link  text-light" href="/page2">My Page</a>
+                            <a class="nav-link  text-light" href="./#about-us">About Us</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link  text-light" href="/page3">Workout</a>
+                            <a class="nav-link  text-light" href="./page2">My Page</a>
                         </li>
                         <li class="nav-item">
-                            <button type="button" class="btn btn-primary" style="background-color: #74d3ae;"
-                                data-bs-toggle="modal" data-bs-target="#get-started">Sign up / Login</button>
+                            <a class="nav-link  text-light" href="./page3">Workout</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link  text-light" href="./#contact-us">Contact Us</a>
+                        </li>
+                        <li class="nav-item">
+                            <button type="button" class="btn btn-primary" style="background-color: #74d3ae;" id="logout"
+                                >Logout</button>
                         </li>
                     </ul>
                 </div>
@@ -168,6 +178,7 @@
 
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+    <script src="./assets/js/page3.js"></script>
     <script src="./assets/js/page2.js"></script>
 </body>
 

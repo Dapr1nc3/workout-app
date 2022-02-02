@@ -130,3 +130,38 @@ $("#goal-week . description").val(localStorage.getItem("goal-week"));
 $("#prev-goal . description").val(localStorage.getItem("prev-goal"));
 
 $("#chall-goal . description").val(localStorage.getItem("chall-goal"));
+
+
+// function endSession() {
+//   // event.preventDefault();
+//   console.log('connected');
+
+//   // await fetch("/api/users/logout", {
+//   //   method: "post",
+//   //   body: JSON.stringify({
+//   //     username,
+//   //     password,
+//   //   }),
+//   //   headers: { "Content-Type": "application/json" },
+//   // });
+//   // if (response.ok) {
+//   //   document.location.replace("/");
+//   // } else {
+//   //   alert(response.statusText);
+//   // }
+// };
+
+async function logout() {
+  const response = await fetch('/api/users/logout', {
+    method: 'post',
+    headers: { 'Content-Type': 'application/json' }
+  });
+
+  if (response.ok) {
+    document.location.replace('/');
+  } else {
+    alert(response.statusText);
+  }
+}
+
+document.querySelector('#logout').addEventListener('click', logout);
