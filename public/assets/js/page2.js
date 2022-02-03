@@ -11,6 +11,20 @@ planner.addEventListener("keyup",(event) => {
   localStorage.setItem(username, JSON.stringify(userResults))
 });
 
+const measurements = document.getElementById('measurements');
+measurements.addEventListener("keyup",(event) => {
+  const {id, value} = event.target
+  userResults = { ...userResults, [id]: value}
+  localStorage.setItem(username, JSON.stringify(userResults))
+});
+
+const goals = document.getElementById('goals');
+goals.addEventListener("keyup",(event) => {
+  const {id, value} = event.target
+  userResults = { ...userResults, [id]: value}
+  localStorage.setItem(username, JSON.stringify(userResults))
+});
+
 //  selects each text area from the front end by its id
 let textArea = document.querySelector("#textArea");
 let textArea2 = document.querySelector("#textArea2");
