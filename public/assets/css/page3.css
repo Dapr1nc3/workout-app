@@ -1,59 +1,57 @@
 :root {
-    --white: #FCF7F8;
-    --dark-blue: #21295C;
-    --mint: #74D3AE;
-  }
-
-body {
-    background-color:var(--dark-blue);
-    color: var(--white);
-    text-align: justify;
-    font-family: 'Exo', sans-serif;
+  --white: #fcf7f8;
+  --dark-blue: #21295c;
+  --mint: #74d3ae;
 }
 
+body {
+  background-color: var(--dark-blue);
+  color: var(--white);
+  text-align: justify;
+  font-family: "Exo", sans-serif;
+}
 
 nav {
-    background-color: var(--dark-blue);
-    color:var(--white);
-    border-bottom: 1px solid #FCF7F8;
+  background-color: var(--dark-blue);
+  color: var(--white);
+  border-bottom: 1px solid #fcf7f8;
 }
 
 nav h1 {
-    font-size:50px;
-    padding: 2vw;
+  font-size: 50px;
+  padding: 2vw;
 }
 
-
 img {
-	display: block;
-	margin: auto;
-	width: 25%;
+  display: block;
+  margin: auto;
+  width: 25%;
 }
 
 .carousel-item {
-    padding-top: 50px;
+  padding-top: 50px;
 }
 
 footer {
-    background-color: var(--dark-blue);
-    color:var(--white);
-    border-top: 1px solid #FCF7F8;
+  background-color: var(--dark-blue);
+  color: var(--white);
+  border-top: 1px solid #fcf7f8;
 }
 
 footer h1 {
-    font-size:15px;
+  font-size: 15px;
 }
 
 @media only screen and (min-width: 1090px) {
-    img {
-      width: 280px;
-      height: 280px;
-    }
+  img {
+    width: 280px;
+    height: 280px;
   }
+}
 
-  @media only screen and (max-width: 980px) {
-    img {
-      width: 280px;
-      height: 280px;
-    }
+@media only screen and (max-width: 980px) {
+  img {
+    width: 280px;
+    height: 280px;
   }
+}
