@@ -22,7 +22,7 @@ SO THAT I can maintain a healthy lifestyle and workout in the comfort of my home
 https://young-bastion-49807.herokuapp.com/
 
 ## Website Screenshot
-![NGF-SS](https://user-images.githubusercontent.com/87787132/152415922-ae55f301-d4c9-4b8f-9f80-2f850466b54f.png)
+![image](https://user-images.githubusercontent.com/87587644/152617466-b79a4ec0-c29c-4ada-818b-7b22ba4a815d.png)
 
 
 
